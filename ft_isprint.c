@@ -1,21 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: muakbas <muakbas@student.42kocaeli.com.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/10 14:14:31 by muakbas           #+#    #+#             */
-/*   Updated: 2025/06/10 15:35:06 by muakbas          ###   ########.fr       */
+/*   Created: 2025/06/10 15:32:14 by muakbas           #+#    #+#             */
+/*   Updated: 2025/06/10 15:34:41 by muakbas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
-
-
-int ft_isalpha(int c);
-int ft_isdigit(int c);
-int ft_isalnum(int c);
-int ft_isascii(int c);
-int ft_isprint(int c);
+int ft_isprint(int c)
+{
+    return (c >= '32' && c <= '126');
+}
