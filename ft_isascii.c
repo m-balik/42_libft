@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: muakbas <muakbas@student.42kocaeli.com.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/10 15:27:22 by muakbas           #+#    #+#             */
-/*   Updated: 2025/06/10 15:28:45 by muakbas          ###   ########.fr       */
+/*   Created: 2025/07/05 12:25:54 by muakbas           #+#    #+#             */
+/*   Updated: 2025/07/05 12:25:56 by muakbas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isascii(int c)
+int	ft_isascii(int c)
 {
-    return (c >= 0 && c <=127);
+	return (c >= 0 && c <= 127);
 }

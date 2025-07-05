@@ -5,16 +5,16 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: muakbas <muakbas@student.42kocaeli.com.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/10 15:20:55 by muakbas           #+#    #+#             */
-/*   Updated: 2025/06/10 15:24:47 by muakbas          ###   ########.fr       */
+/*   Created: 2025/07/05 12:25:40 by muakbas           #+#    #+#             */
+/*   Updated: 2025/07/05 12:25:41 by muakbas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isalnum(int c)
+int	ft_isalnum(int c)
 {
-    if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') 
-        || (c >= '0' && c <= '9'))
-        return(1);
-    else
-        return(0);
+	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')
+		|| (c >= '0' && c <= '9'))
+		return (1);
+	else
+		return (0);
 }

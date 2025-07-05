@@ -1,32 +1,37 @@
-#include "libft.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: muakbas <muakbas@student.42kocaeli.com.    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/07/05 12:33:02 by muakbas           #+#    #+#             */
+/*   Updated: 2025/07/05 12:33:02 by muakbas          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+#include <stddef.h>
+
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	size_t			i;
-	unsigned char	*d;
-	unsigned char	*s;
+	char		*pdest;
+	const char	*psrc;
 
-	d = (unsigned char *)dst;
-	s = (unsigned char *)src;
-	if (d == s)
-		return (dst);
-	if (d < s)
+	if (!dest && !src)
+		return (NULL);
+	pdest = dest;
+	psrc = src;
+	if (pdest < psrc)
 	{
-		i = 0;
-		while (i < len)
-		{
-			d[i] = s[i];
-			i++;
-		}
+		while (n--)
+			*pdest++ = *psrc++;
 	}
 	else
 	{
-		i = len;
-		while (i > 0)
-		{
-			d[i - 1] = s[i - 1];
-			i--;
-		}
+		pdest += n;
+		psrc += n;
+		while (n--)
+			*(--pdest) = *(--psrc);
 	}
-	return (dst);
+	return (dest);
 }

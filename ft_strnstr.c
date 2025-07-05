@@ -1,17 +1,36 @@
-#include "libft.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: muakbas <muakbas@student.42kocaeli.com.    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/07/05 12:43:03 by muakbas           #+#    #+#             */
+/*   Updated: 2025/07/05 12:43:03 by muakbas          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+#include <stddef.h>
+
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	size_t	needle_len;
+	size_t	i;
+	size_t	j;
 
-	if (*needle == '\0')
-		return ((char *)haystack);
-	needle_len = ft_strlen(needle);
-	while (*haystack && len-- >= needle_len)
+	i = 0;
+	if (little[0] == '\0')
+		return ((char *)big);
+	while (big[i] && i < len)
 	{
-		if (ft_strncmp(haystack, needle, needle_len) == 0)
-			return ((char *)haystack);
-		haystack++;
-	}
+		j = 0;
+		while (big[i + j] != '\0'
+			&& big[i + j] == little[j] && i + j < len)
+		{
+			if (little[j + 1] == '\0')
+				return ((char *)&big[i]);
+			++j;
+		}	
+		++i;
+	}	
 	return (NULL);
 }

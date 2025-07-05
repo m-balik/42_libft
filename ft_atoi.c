@@ -1,24 +1,34 @@
-#include "libft.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: muakbas <muakbas@student.42kocaeli.com.tr  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/07/05 12:12:38 by muakbas           #+#    #+#             */
+/*   Updated: 2025/07/05 12:12:43 by muakbas          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int	ft_atoi(const char *str)
+int	ft_atoi(const char *nptr)
 {
-	int		sign;
-	long	result;
+	int	sum;
+	int	sign;
 
+	sum = 0;
 	sign = 1;
-	result = 0;
-	while ((*str >= 9 && *str <= 13) || *str == ' ')
-		str++;
-	if (*str == '-' || *str == '+')
+	while (*nptr == ' ' || (*nptr >= 9 && *nptr <= 13))
+		nptr++;
+	if (*nptr == '+' || *nptr == '-')
 	{
-		if (*str == '-')
-			sign = -1;
-		str++;
+		if (*nptr == '-')
+			sign *= -1;
+		nptr++;
 	}
-	while (*str >= '0' && *str <= '9')
+	while (*nptr >= '0' && *nptr <= '9')
 	{
-		result = result * 10 + (*str - '0');
-		str++;
+		sum = (sum * 10) + (*nptr - '0');
+		nptr++;
 	}
-	return ((int)(result * sign));
+	return (sign * sum);
 }

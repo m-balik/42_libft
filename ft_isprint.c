@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: muakbas <muakbas@student.42kocaeli.com.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/10 15:32:14 by muakbas           #+#    #+#             */
-/*   Updated: 2025/06/10 15:34:41 by muakbas          ###   ########.fr       */
+/*   Created: 2025/07/05 12:26:15 by muakbas           #+#    #+#             */
+/*   Updated: 2025/07/05 12:26:16 by muakbas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isprint(int c)
+int	ft_isprint(int c)
 {
-    return (c >= '32' && c <= '126');
+	return (c >= 32 && c <= 126);
 }
